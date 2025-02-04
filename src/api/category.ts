@@ -1,7 +1,11 @@
-import request from "../utils/request";
+import request from "../utils/axiosUtil";
 
+export interface Category {
+  id: string;
+  name: string;
+  col?: number;
+  urlname: string;
+}
 export const getCategory = () => {
-  return request({
-    url: "/category",
-  });
+  return request.get("/category", false);
 };
