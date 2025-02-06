@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Category } from "../../../api/category";
 import useScroll from "../../../hooks/useScroll";
+import Popup from "../../popup";
+import Menu from "../../menu";
 
 interface ChildComponentProps {
   categories: Category[] | undefined;
@@ -41,6 +43,8 @@ const MobileNavigation: React.FC<ChildComponentProps> = ({ categories }) => {
     }
   }, [currentCategoryIndex, ulScrollLeft]);
 
+  const [isPopupOpen, setIsPopupOpen] = useState(true);
+
   return (
     <>
       <div className=" bg-white sticky top-0 left-0 z-10"></div>
@@ -68,6 +72,10 @@ const MobileNavigation: React.FC<ChildComponentProps> = ({ categories }) => {
           </li>
         ))}
       </ul>
+
+      <Popup isOpen={true} onClose={() => setIsPopupOpen(false)}>
+        <Menu categories={categories}></Menu>
+      </Popup>
     </>
   );
 };

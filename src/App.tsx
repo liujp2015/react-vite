@@ -1,7 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navigation from "./components/navigation";
+import Popup from "./components/popup";
 
 function App() {
+  const [isPopupOpen, setIsPopupOpen] = useState(true);
+
   useEffect(() => {
     const MAX_FONT_SIZE = 40;
     const html = document.querySelector("html");
@@ -27,7 +30,9 @@ function App() {
   }, []); // 空依赖数组，意味着只会在组件挂载时运行一次
   return (
     <>
-      <Navigation></Navigation>
+      <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}>
+        <Navigation></Navigation>
+      </Popup>
     </>
   );
 }
