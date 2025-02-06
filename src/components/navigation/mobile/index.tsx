@@ -51,9 +51,11 @@ const MobileNavigation: React.FC<ChildComponentProps> = ({ categories }) => {
         <li
           className=" absolute bg-zinc-900 h-[22px] rounded-lg duration-200"
           ref={liRef}
+          style={sliderStyle}
         ></li>
         {(categories || []).map((item, index) => (
           <li
+            key={item.id}
             className=" shrink-0 px-1.5 py-0.5 z-10 duration-200"
             ref={(el) => {
               itemRefs.current[index] = el;

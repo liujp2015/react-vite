@@ -2,15 +2,18 @@ import { useEffect, useRef, useState } from "react";
 import { useIsMobileTerminal } from "../../hooks/useIsMobileTerminal";
 import MobileNavigation from "./mobile";
 import { Category, getCategory } from "../../api/category";
+import { ALL_CATEGORY_ITEM } from "../../constants";
 
 const Navigation = () => {
   const isMobileTerminal = useIsMobileTerminal();
-  const [categories, setCategorys] = useState<Category[]>();
+  const [categories, setCategorys] = useState<Category[]>([]);
   // const categories = useRef<Category[]>();
   const categorys1 = async () => {
     try {
       const axiosResponse = await getCategory();
-      setCategorys(axiosResponse.data.categorys);
+      const updatedCategories = [...axiosResponse.data.categorys];
+      updatedCategories.unshift(ALL_CATEGORY_ITEM);
+      setCategorys(updatedCategories);
       // categories.current = axiosResponse.data.categorys;
     } catch (error) {
       console.error("Failed to fetch categories", error);
