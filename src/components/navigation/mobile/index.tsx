@@ -7,11 +7,11 @@ interface ChildComponentProps {
 
 const MobileNavigation: React.FC<ChildComponentProps> = ({ categories }) => {
   const liRef = useRef<HTMLLIElement>(null);
-
+  const itemrefs = useRef<(HTMLLIElement | null)[]>([]);
   // 使用 useEffect 确保 DOM 元素已经挂载后再进行样式设置
   useEffect(() => {
     if (liRef.current) {
-      liRef.current.style.width = "60px";
+      liRef.current.style.width = "52px";
       liRef.current.style.transform = "translateX(0px)";
     }
   }, []); // 空依赖数组表示只在组件首次挂载时执行
@@ -24,11 +24,16 @@ const MobileNavigation: React.FC<ChildComponentProps> = ({ categories }) => {
           className=" absolute bg-zinc-900 h-[22px] rounded-lg duration-200"
           ref={liRef}
         ></li>
-        <li className=" shrink-0 px-1.5 py-0.5 z-10 duration-200">
-          {(categories || []).map((item, index) => (
-            <div key={index}>{item.name}</div> // 假设 Category 包含 name 属性
-          ))}
-        </li>
+        {(categories || []).map((item, index) => (
+          <li
+            className=" shrink-0 px-1.5 py-0.5 z-10 duration-200"
+            ref={(el) => {
+              itemrefs.current[index] = el;
+            }}
+          >
+            {item.name}
+          </li>
+        ))}
       </ul>
     </>
   );
