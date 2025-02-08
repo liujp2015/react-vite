@@ -1,0 +1,28 @@
+/* 蒙版的淡入淡出动画 */
+.fade-enter-active,
+.fade-exit-active {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* 弹出框的滑入滑出动画 */
+.popup-down-up-enter-active,
+.popup-down-up-leave-active {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* 过渡 transform 和 opacity */
+}
+
+.popup-down-up-enter-from,
+.popup-down-up-leave-to {
+  transform: translateY(100%); /* 从屏幕外底部滑入/滑出 */
+  opacity: 0; /* 初始透明度 */
+}
+
+.popup-down-up-enter-to,
+.popup-down-up-leave-from {
+  transform: translateY(0); /* 滑入结束位置 */
+  opacity: 1; /* 结束时完全可见 */
+}

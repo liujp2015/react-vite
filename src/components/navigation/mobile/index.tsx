@@ -3,6 +3,7 @@ import { Category } from "../../../api/category";
 import useScroll from "../../../hooks/useScroll";
 import Popup from "../../popup";
 import Menu from "../../menu";
+import { Button } from "@headlessui/react";
 
 interface ChildComponentProps {
   categories: Category[] | undefined;
@@ -15,7 +16,7 @@ const MobileNavigation: React.FC<ChildComponentProps> = ({ categories }) => {
   const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
   const { x: ulScrollLeft } = useScroll(ulTarget);
   const [sliderStyle, setSliderStyle] = useState({});
-
+  const [isOpen, setIsOpen] = useState(false);
   // 使用 useEffect 确保 DOM 元素已经挂载后再进行样式设置
   useEffect(() => {
     if (liRef.current) {
@@ -72,8 +73,14 @@ const MobileNavigation: React.FC<ChildComponentProps> = ({ categories }) => {
           </li>
         ))}
       </ul>
-
-      <Popup isOpen={true} onClose={() => setIsPopupOpen(false)}>
+      <Button
+        onClick={() => {
+          setIsOpen(true);
+        }}
+      >
+        打开popup
+      </Button>
+      <Popup isOpen={isOpen} onClose={() => setIsPopupOpen(false)}>
         <Menu categories={categories}></Menu>
       </Popup>
     </>

@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import Navigation from "./components/navigation";
 import Popup from "./components/popup";
-
+import Index from "./layout/index";
+import { RouterProvider } from "react-router-dom";
+import router from "./router";
 function App() {
-  const [isPopupOpen, setIsPopupOpen] = useState(true);
+  // const [isPopupOpen, setIsPopupOpen] = useState(true);
 
   useEffect(() => {
     const MAX_FONT_SIZE = 40;
@@ -13,6 +15,7 @@ function App() {
       let fontSize = window.innerWidth / 10;
       fontSize = fontSize > MAX_FONT_SIZE ? MAX_FONT_SIZE : fontSize;
       if (html) {
+        console.log("字体设置", fontSize);
         html.style.fontSize = fontSize + "px";
       }
     };
@@ -30,9 +33,11 @@ function App() {
   }, []); // 空依赖数组，意味着只会在组件挂载时运行一次
   return (
     <>
-      <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}>
-        <Navigation></Navigation>
-      </Popup>
+      <RouterProvider router={router}>
+        {/* <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}> */}
+        {/* <Navigation></Navigation> */}
+        {/* </Popup> */}
+      </RouterProvider>
     </>
   );
 }

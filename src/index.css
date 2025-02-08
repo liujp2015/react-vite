@@ -13,3 +13,31 @@
   --text-xl: 0.65rem;
   --text-xl--line-height: 0.75rem;
 }
+
+/* 蒙版的淡入动画 */
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 蒙版动画 */
+.fade-enter-active,
+.fade-exit-active {
+  animation: fade 0.3s ease-in-out;
+}
+
+/* 弹出框滑动动画 */
+@keyframes popup-slide-in {
+  from {
+    transform: translateY(100%); /* 从屏幕底部开始 */
+    opacity: 0; /* 开始时完全透明 */
+  }
+  to {
+    transform: translateY(0); /* 到达目标位置 */
+    opacity: 1; /* 最终变得不透明 */
+  }
+}
