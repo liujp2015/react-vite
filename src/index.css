@@ -53,3 +53,7 @@
     opacity: 1; /* 最终变得不透明 */
   }
 }
+
+@theme {
+  --color-main: #f44c58;
+}
