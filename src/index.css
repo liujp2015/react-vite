@@ -41,3 +41,15 @@
     opacity: 1; /* 最终变得不透明 */
   }
 }
+
+/* 弹出框滑动动画 */
+@keyframes search-slide-in {
+  from {
+    transform: translateY(40px); /* 从屏幕底部开始 */
+    opacity: 0; /* 开始时完全透明 */
+  }
+  to {
+    transform: translateY(0); /* 到达目标位置 */
+    opacity: 1; /* 最终变得不透明 */
+  }
+}
