@@ -17,7 +17,9 @@ const Header = () => {
             navigate("/");
           }}
         />
-        <HeaderSearch></HeaderSearch>
+        <HeaderSearch>
+          <div></div>
+        </HeaderSearch>
         <HeaderTheme></HeaderTheme>
         <HeaderMy></HeaderMy>
       </div>

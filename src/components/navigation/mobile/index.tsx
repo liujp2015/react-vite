@@ -4,6 +4,7 @@ import useScroll from "../../../hooks/useScroll";
 import Popup from "../../popup";
 import Menu from "../../menu";
 import { Button } from "@headlessui/react";
+import SvgIcon from "../../svgIcon";
 
 interface ChildComponentProps {
   categories: Category[] | undefined;
@@ -50,9 +51,15 @@ const MobileNavigation: React.FC<ChildComponentProps> = ({ categories }) => {
     <>
       <div className=" bg-white sticky top-0 left-0 z-10"></div>
       <ul
-        className=" relative flex overflow-x-auto p-1 text-xs text-zinc-600 overflow-hidden"
+        className=" relative flex overflow-x-auto p-1 text-xs text-zinc-600 overflow-hidden "
         ref={ulTarget}
       >
+        <li className="z-20 fixed top-0 right-[-1px] h-4 px-1 flex items-center bg-white shadow-l-white ">
+          <SvgIcon
+            name="hamburger"
+            fillClass="w-2 h-2 fill-zinc-900 dark:fill-zinc-200 group-hover:fill-main "
+          ></SvgIcon>
+        </li>
         <li
           className=" absolute bg-zinc-900 h-[22px] rounded-lg duration-200"
           ref={liRef}
@@ -61,7 +68,7 @@ const MobileNavigation: React.FC<ChildComponentProps> = ({ categories }) => {
         {(categories || []).map((item, index) => (
           <li
             key={item.id}
-            className=" shrink-0 px-1.5 py-0.5 z-10 duration-200"
+            className=" shrink-0 px-1.5 py-0.5 z-10 duration-200 last:mr-4"
             ref={(el) => {
               itemRefs.current[index] = el;
             }}

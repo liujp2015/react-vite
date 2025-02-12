@@ -56,4 +56,5 @@
 
 @theme {
   --color-main: #f44c58;
+  --shadow-l-white: -10px 0 10px white;
 }

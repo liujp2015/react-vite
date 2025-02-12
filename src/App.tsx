@@ -4,6 +4,7 @@ import Popup from "./components/popup";
 import Index from "./layout/index";
 import { RouterProvider } from "react-router-dom";
 import router from "./router";
+import SvgIcon from "./components/svgIcon";
 function App() {
   // const [isPopupOpen, setIsPopupOpen] = useState(true);
 
@@ -35,9 +36,13 @@ function App() {
     <>
       <RouterProvider router={router}>
         {/* <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}> */}
-        {/* <Navigation></Navigation> */}
+
         {/* </Popup> */}
       </RouterProvider>
+      <div className=" shadow-l-white">123</div>
+      <Navigation></Navigation>
+
+      <SvgIcon name="hamburger" color="red" fillClass="text-red-500" />
     </>
   );
 }
