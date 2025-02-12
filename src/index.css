@@ -58,3 +58,30 @@
   --color-main: #f44c58;
   --shadow-l-white: -10px 0 10px white;
 }
+
+/* popover显示动画 */
+@keyframes header-popover {
+  from {
+    transform: translateY(0px); /* 从屏幕底部开始 */
+    opacity: 0; /* 开始时完全透明 */
+  }
+  to {
+    transform: translateY(20px); /* 到达目标位置 */
+    opacity: 1; /* 最终变得不透明 */
+  }
+}
+
+/* slide 展示动画 */
+.slide-enter-active {
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.slide-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  transform: translateY(20px);
+  opacity: 0;
+}
