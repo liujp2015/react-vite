@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import Navigation from "./components/navigation";
 import Popup from "./components/popup";
 import Index from "./layout/index";
-import { RouterProvider } from "react-router-dom";
-import router from "./router";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SvgIcon from "./components/svgIcon";
+import { useIsMobileTerminal } from "./hooks/useIsMobileTerminal";
+import Router from "./router";
+
 function App() {
   // const [isPopupOpen, setIsPopupOpen] = useState(true);
 
@@ -34,15 +36,8 @@ function App() {
   }, []); // 空依赖数组，意味着只会在组件挂载时运行一次
   return (
     <>
-      <RouterProvider router={router}>
-        {/* <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}> */}
-
-        {/* </Popup> */}
-      </RouterProvider>
-      <div className=" shadow-l-white">123</div>
+      <Router></Router>
       <Navigation></Navigation>
-
-      <SvgIcon name="hamburger" color="red" fillClass="text-red-500" />
     </>
   );
 }
