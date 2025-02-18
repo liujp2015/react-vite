@@ -19,7 +19,7 @@ const Index = () => {
       >
         Click me
       </Button> */}
-      <Main></Main>
+      <Main />
       <Floating></Floating>
     </div>
   );

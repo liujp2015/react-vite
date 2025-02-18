@@ -14,7 +14,7 @@ const Popover: React.FC<PopoverProps> = ({
   ShowComponent,
   placement = "bottom-left",
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
   const [contentStyle, setContentStyle] = useState<{
     top: number;
     left: number;

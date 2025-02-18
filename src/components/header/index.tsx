@@ -1,8 +1,8 @@
 import React from "react";
 import HeaderSearch from "./components/HeaderSearch";
 import HeaderTheme from "./components/HeaderTheme";
-import HeaderMy from "./components/headerMy";
 import { useNavigate } from "react-router-dom";
+import HeaderMy from "./components/HeaderMy";
 
 const Header = () => {
   const navigate = useNavigate();

@@ -19,16 +19,18 @@ const HeaderSearch: React.FC<HeaderSearchProps> = ({ children }) => {
         {/* <CiSearch className="w-1.5 h-1.5 absolute left-2 text-[#707070] translate-y-[-50%] top-[50%]" /> */}
         {/* <CiSearch className="w-1.5 h-1.5 absolute left-2 text-[#eb1010]" /> */}
         <CiSearch className="w-2 h-2 absolute left-2" />
-        <input
-          className="block w-full h-[44px] pl-4 text-sm text-zinc-900 outline-0 bg-zinc-100 caret-zinc-400 rounded-xl 
+        <>
+          <input
+            className="block w-full h-[44px] pl-4 text-sm text-zinc-900 outline-0 bg-zinc-100 caret-zinc-400 rounded-xl 
           tracking-wide font-semibold border border-zinc-100 duration-500 focus:border-red-300
           group-hover:bg-white"
-          placeholder="搜索"
-          type="text"
-        ></input>
+            placeholder="搜索"
+            type="text"
+          />
+        </>
         <TiDelete className="h-2 w-2 duration-500 absolute right-9" />
 
-        <div className=" opacity-0 h-1.5 w-[1px] absolute right-[62px] duration-500 bg-zinc-200 group-hover:opacity-100"></div>
+        <div className=" opacity-0 h-1.5 w-[1px] absolute right-[62px] duration-500 bg-zinc-200 group-hover:opacity-100" />
       </div>
 
       <CSSTransition

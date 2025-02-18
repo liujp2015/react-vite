@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useIsMobileTerminal } from "../../hooks/useIsMobileTerminal";
 import MobileNavigation from "./mobile";
+import PcNavigation from "./pc";
 import { Category, getCategory } from "../../api/category";
 import { ALL_CATEGORY_ITEM } from "../../constants";
 
@@ -11,7 +12,7 @@ const Navigation = () => {
   const categorys1 = async () => {
     try {
       const axiosResponse = await getCategory();
-      const updatedCategories = [...axiosResponse.data.categorys];
+      const updatedCategories = axiosResponse.data.categorys;
       updatedCategories.unshift(ALL_CATEGORY_ITEM);
       setCategorys(updatedCategories);
       // categories.current = axiosResponse.data.categorys;
@@ -29,6 +30,10 @@ const Navigation = () => {
       {isMobileTerminal && categories && (
         <MobileNavigation categories={categories} />
         // <MobileNavigation categories={categories.current} />
+      )}
+
+      {!isMobileTerminal && categories && (
+        <PcNavigation categories={categories} />
       )}
     </div>
   );

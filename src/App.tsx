@@ -37,7 +37,6 @@ function App() {
   return (
     <>
       <Router></Router>
-      <Navigation></Navigation>
     </>
   );
 }

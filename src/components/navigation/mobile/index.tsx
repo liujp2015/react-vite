@@ -61,7 +61,7 @@ const MobileNavigation: React.FC<ChildComponentProps> = ({ categories }) => {
           ></SvgIcon>
         </li>
         <li
-          className=" absolute bg-zinc-900 h-[22px] rounded-lg duration-200"
+          className=" absolute bg-zinc-900 h-[22px] rounded-lg duration-200 "
           ref={liRef}
           style={sliderStyle}
         ></li>
