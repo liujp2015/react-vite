@@ -85,3 +85,5 @@
   transform: translateY(20px);
   opacity: 0;
 }
+
+@custom-variant dark (&:where(.dark, .dark *));

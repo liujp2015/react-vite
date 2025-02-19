@@ -7,7 +7,7 @@ import HeaderMy from "./components/HeaderMy";
 const Header = () => {
   const navigate = useNavigate();
   return (
-    <div className="h-[72px] w-full bg-white border-b border-zinc-200 px-2 py-1">
+    <div className="h-[72px] w-full bg-white border-b border-zinc-200 px-2 py-1 dark:bg-zinc-800">
       <div className=" flex items-center">
         <img
           className=" h-4 cursor-pointer mr-2"

@@ -34,7 +34,7 @@ const HeaderSearch: React.FC<HeaderSearchProps> = ({ children }) => {
       </div>
 
       <CSSTransition
-        in={true}
+        in={false}
         timeout={300} // 动画的持续时间
         classNames="search-slide-in"
         unmountOnExit
