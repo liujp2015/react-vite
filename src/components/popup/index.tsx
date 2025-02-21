@@ -43,7 +43,9 @@ const Popup: React.FC<PopupProps> = ({ isOpen, onClose, children }) => {
         classNames="popup"
         unmountOnExit
       >
-        <div className="w-screen bg-white z-50 fixed bottom-0">{children}</div>
+        <div className="w-screen bg-white dark:bg-zinc-800 z-50 fixed bottom-0">
+          {children}
+        </div>
       </CSSTransition>
     </>,
     document.body // 将 Popup 渲染到 body 上

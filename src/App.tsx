@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SvgIcon from "./components/svgIcon";
 import { useIsMobileTerminal } from "./hooks/useIsMobileTerminal";
 import Router from "./router";
+import useTheme from "./hooks/useTheme";
 
 function App() {
   // const [isPopupOpen, setIsPopupOpen] = useState(true);
@@ -34,6 +35,8 @@ function App() {
       window.removeEventListener("resize", setFontSize);
     };
   }, []); // 空依赖数组，意味着只会在组件挂载时运行一次
+  useTheme();
+  
   return (
     <>
       <Router></Router>

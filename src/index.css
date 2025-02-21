@@ -57,6 +57,7 @@
 @theme {
   --color-main: #f44c58;
   --shadow-l-white: -10px 0 10px white;
+  --shadow-l-zinc: -10px 0 10px #18181b;
 }
 
 /* popover显示动画 */

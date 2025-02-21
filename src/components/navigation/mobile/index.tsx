@@ -49,19 +49,22 @@ const MobileNavigation: React.FC<ChildComponentProps> = ({ categories }) => {
 
   return (
     <>
-      <div className=" bg-white sticky top-0 left-0 z-10"></div>
+      <div className=" bg-white sticky top-0 left-0 z-10 dark:bg-zinc-900"></div>
       <ul
         className=" relative flex overflow-x-auto p-1 text-xs text-zinc-600 overflow-hidden "
         ref={ulTarget}
       >
-        <li className="z-20 fixed top-0 right-[-1px] h-4 px-1 flex items-center bg-white shadow-l-white ">
+        <li
+          className="z-20 fixed top-0 right-[-1px] h-4 px-1 flex items-center bg-white shadow-l-white 
+         dark:bg-zinc-900 dark:shadow-l-zinc"
+        >
           <SvgIcon
             name="hamburger"
-            fillClass="w-2 h-2 fill-zinc-900 dark:fill-zinc-200 group-hover:fill-main "
+            className="w-2 h-2 fill-zinc-900 dark:fill-zinc-200 group-hover:fill-main "
           ></SvgIcon>
         </li>
         <li
-          className=" absolute bg-zinc-900 h-[22px] rounded-lg duration-200 "
+          className=" absolute bg-zinc-900 h-[22px] rounded-lg duration-200 dark:bg-zinc-800"
           ref={liRef}
           style={sliderStyle}
         ></li>

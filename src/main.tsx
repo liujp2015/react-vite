@@ -4,9 +4,13 @@ import "./index.css";
 import App from "./App.tsx";
 
 import "virtual:svg-icons-register";
+import { Provider } from "react-redux";
+import { store } from "./store/index.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </StrictMode>
 );

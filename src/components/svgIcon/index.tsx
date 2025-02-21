@@ -5,6 +5,7 @@ interface SvgIconProps {
   color?: string; // 图标颜色
   fillClass?: string; // TailwindCSS 类
   size?: string | number;
+  className;
 }
 
 const SvgIcon: React.FC<SvgIconProps> = ({
@@ -12,12 +13,13 @@ const SvgIcon: React.FC<SvgIconProps> = ({
   color,
   fillClass,
   size = 16,
+  className,
 }) => {
   const symbolId = `#icon-${name}`; // 动态生成符号 ID
 
   return (
     <svg aria-hidden="true" width={size} height={size}>
-      <use className={fillClass} href={symbolId} fill={color} />
+      <use className={className} href={symbolId} fill={color} />
     </svg>
   );
 };
