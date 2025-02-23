@@ -8,7 +8,9 @@ const Index = () => {
   return (
     <div className=" h-screen">
       <Header></Header>
-      {/* <div className=" bg-main">2343</div> */}
+      <Button className=" absolute translate-y-[-50%] top-[50%] right-1"></Button>
+      {/* <div className=" hover:bg-main">2343</div>
+      <div className=" hover:bg-dddd">123</div> */}
       {/* <Button
         type="primary"
         size="small"

@@ -1,5 +1,6 @@
 import axios, { AxiosInstance, AxiosPromise, AxiosRequestConfig } from "axios";
 import conf from "../config/index";
+import md5 from "md5";
 
 //增加mock
 interface AxiosRequestConfig_ extends AxiosRequestConfig {
@@ -63,6 +64,15 @@ class AxiosUtil {
         // if (!headers.authorization && token) {
         //   headers.authorization = `Bearer ${token}`;
         // }
+        const { icode, time } = getTestICode();
+        request.headers.icode = icode;
+        request.headers.codeType = time;
+        // config.headers.icode = '你需要在这里填入你的 icode'
+        // if (store.getters.token) {
+        //   // 如果token存在 注入token
+        //   config.headers.Authorization = `Bearer ${store.getters.token}`
+        // }
+        // return config; // 必须返回配置
         return request;
       },
       (err) => {
@@ -124,6 +134,18 @@ class AxiosUtil {
       };
     });
   }
+}
+
+/**
+ * 返回 Icode 的实现
+ */
+function getTestICode() {
+  const now = Date.now() / 1000;
+  const code = now + "LGD_Sunday-1991-12-30";
+  return {
+    icode: md5(code),
+    time: now,
+  };
 }
 
 export default AxiosUtil.axiosUtil.request;
